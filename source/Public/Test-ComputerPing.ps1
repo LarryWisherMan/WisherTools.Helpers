@@ -1,3 +1,27 @@
+<#
+.SYNOPSIS
+Pings a computer to check if it is online.
+
+.DESCRIPTION
+This function sends a ping request to the specified computer and returns a boolean value indicating whether the computer is reachable. A configurable timeout can be specified for the ping.
+
+.PARAMETER ComputerName
+The name of the computer to be pinged.
+
+.PARAMETER Timeout
+The timeout value for the ping request in milliseconds. The default value is 2000 ms (2 seconds).
+
+.EXAMPLE
+Test-ComputerPing -ComputerName "RemotePC" -Timeout 3000
+
+Pings the computer "RemotePC" with a timeout of 3 seconds to check if it's online.
+
+.OUTPUTS
+System.Boolean
+
+.NOTES
+#>
+
 function Test-ComputerPing {
     [CmdletBinding()]
     param (

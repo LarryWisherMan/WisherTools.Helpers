@@ -1,3 +1,24 @@
+<#
+.SYNOPSIS
+Retrieves the script block of a specified PowerShell function.
+
+.DESCRIPTION
+This function dynamically retrieves the script block definition of a specified PowerShell function. It can be used to examine the contents of an existing function.
+
+.PARAMETER FunctionName
+The name of the function whose script block is to be retrieved.
+
+.EXAMPLE
+Get-FunctionScriptBlock -FunctionName 'Get-Process'
+
+Retrieves the script block of the 'Get-Process' function.
+
+.OUTPUTS
+System.String
+
+.NOTES
+#>
+
 function Get-FunctionScriptBlock {
     param (
         [string]$FunctionName

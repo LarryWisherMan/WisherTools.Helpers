@@ -99,7 +99,7 @@ Pester:
   # - tests/Unit
   # - tests/Integration
   ExcludeTag:
-    - helpQuality
+  #  - helpQuality
     - FunctionalQuality
     - TestQuality
   Tag:
