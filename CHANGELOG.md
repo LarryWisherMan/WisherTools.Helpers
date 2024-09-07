@@ -8,3 +8,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Removed Test Requierments to Test release
+
+### Fixed
+- Updated Pipeline to pass deploy
