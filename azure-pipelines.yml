@@ -11,13 +11,20 @@ trigger:
     exclude:
     - "*-*"
 
+# Define variables and reference the variable group
 variables:
-  group: GitHubSecrets # This references the variable group where your GitHubToken and GalleryApiToken are stored
-  buildFolderName: output
-  buildArtifactName: output
-  testResultFolderName: testResults
-  defaultBranch: main
-  Agent.Source.Git.ShallowFetchDepth: 0 # override ShallowFetchDepth
+  - group: GitHubSecrets # This references the variable group
+  - name: buildFolderName
+    value: output
+  - name: buildArtifactName
+    value: output
+  - name: testResultFolderName
+    value: testResults
+  - name: defaultBranch
+    value: main
+  - name: Agent.Source.Git.ShallowFetchDepth
+    value: 0 # override ShallowFetchDepth
+
 
 stages:
   - stage: Build
