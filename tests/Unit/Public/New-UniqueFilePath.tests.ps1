@@ -24,6 +24,6 @@ AfterAll {
     Remove-Module -Name $script:moduleName
 }
 
-Describe 'Get-BackupFilePath' {
+Describe 'New-UniqueFilePath' {
 
 }
