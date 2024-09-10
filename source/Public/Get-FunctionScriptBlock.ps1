@@ -32,6 +32,7 @@ This function uses the `Get-Command` cmdlet to retrieve the function definition.
 function Get-FunctionScriptBlock
 {
     [CmdletBinding()]
+    [OutputType([string])]  # Add the OutputType attribute
     param (
         [Parameter(Mandatory = $true)]
         [string]$FunctionName
@@ -39,15 +40,12 @@ function Get-FunctionScriptBlock
 
     try
     {
-        # Get the current definition (body) of the specified function dynamically
         $functionBody = (Get-Command -Name $FunctionName).Definition
-
         if (-not $functionBody)
         {
             throw "Function '$FunctionName' exists but has no body."
         }
 
-        # Create the full function definition as a script block
         $fullFunctionScript = @"
 function $FunctionName {
     $functionBody

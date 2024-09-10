@@ -9,7 +9,7 @@ This function checks whether a directory exists. If the directory does not exist
 The path of the directory to check or create.
 
 .EXAMPLE
-Test-DirectoryExists -Directory "C:\Backups"
+Test-DirectoryExistence -Directory "C:\Backups"
 
 Checks if the directory "C:\Backups" exists. If not, the function creates it.
 
@@ -19,7 +19,7 @@ None
 .NOTES
 #>
 
-function Test-DirectoryExists {
+function Test-DirectoryExistence {
     param (
         [string]$Directory
     )

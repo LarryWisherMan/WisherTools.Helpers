@@ -30,6 +30,7 @@ C:\Logs\Log_20240909_141500.log
 #>
 function New-UniqueFilePath
 {
+    [CmdletBinding(SupportsShouldProcess = $true, ConfirmImpact = 'Medium')]
     param (
         [string]$Directory = $env:FILE_DIRECTORY, # Default to environment variable
         [string]$Prefix = $env:FILE_PREFIX, # Default to environment variable
@@ -40,8 +41,7 @@ function New-UniqueFilePath
     if (-not $Directory)
     {
         $Directory = [System.IO.Path]::GetTempPath()  # Fallback to TEMP directory
-
-        Write-Warning "Directory not specified. Using the Fallback directory: $Directory"
+        Write-Warning "Directory not specified. Using the fallback directory: $Directory"
     }
 
     if (-not $Prefix)
@@ -54,11 +54,14 @@ function New-UniqueFilePath
         $Extension = ".txt"  # Fallback to default file extension
     }
 
-    # Check if the directory exists, write a warning if it does not
+    # Check if the directory exists and use ShouldProcess for creating the directory
     if (-not (Test-Path -Path $Directory))
     {
-        Write-Warning "Directory '$Directory' does not exist. Creating it now."
-        New-Item -Path $Directory -ItemType Directory -Force | Out-Null
+        if ($PSCmdlet.ShouldProcess("Directory '$Directory'", "Creating new directory"))
+        {
+            Write-Warning "Directory '$Directory' does not exist. Creating it now."
+            New-Item -Path $Directory -ItemType Directory -Force | Out-Null
+        }
     }
 
     # Generate a unique file name with a timestamp

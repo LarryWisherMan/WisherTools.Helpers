@@ -43,7 +43,7 @@
 3. **Get-BackupFilePath**
    Generates a unique backup file path with a timestamp.
 
-4. **Test-DirectoryExists**
+4. **Test-DirectoryExistence**
    Ensures that a directory exists; creates it if necessary.
 
 5. **Test-ComputerPing**

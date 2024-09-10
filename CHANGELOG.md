@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - `Get-FunctionScriptBlock`
   - `New-UniqueFilePath`
   - `Test-ComputerPing`
-  - `Test-DirectoryExists`
+  - `Test-DirectoryExistence`
   
 - Added module PSData and build config
 - Added module PSData and build config.

@@ -24,7 +24,7 @@ AfterAll {
     Remove-Module -Name $script:moduleName
 }
 
-Describe 'Test-DirectoryExists' -Tag 'Public' {
+Describe 'Test-DirectoryExistence' -Tag 'Public' {
 
     Context "When the directory exists" {
         It "should not create a new directory if it already exists" {
@@ -35,7 +35,7 @@ Describe 'Test-DirectoryExists' -Tag 'Public' {
             Mock New-Item
 
             # Call the function
-            Test-DirectoryExists -Directory "C:\ExistingDirectory"
+            Test-DirectoryExistence -Directory "C:\ExistingDirectory"
 
             # Assert that New-Item was not called since the directory exists
             Assert-MockCalled New-Item -Times 0
@@ -51,7 +51,7 @@ Describe 'Test-DirectoryExists' -Tag 'Public' {
             Mock New-Item
 
             # Call the function
-            Test-DirectoryExists -Directory "C:\NewDirectory"
+            Test-DirectoryExistence -Directory "C:\NewDirectory"
 
             # Assert that New-Item was called to create the directory
             Assert-MockCalled New-Item -ParameterFilter { $Path -eq "C:\NewDirectory" -and $ItemType -eq "Directory" }
@@ -67,7 +67,7 @@ Describe 'Test-DirectoryExists' -Tag 'Public' {
             Mock New-Item
 
             # Call the function
-            Test-DirectoryExists -Directory "C:\ForcedDirectory"
+            Test-DirectoryExistence -Directory "C:\ForcedDirectory"
 
             # Assert that New-Item was called with the -Force parameter
             Assert-MockCalled New-Item -ParameterFilter { $Path -eq "C:\ForcedDirectory" -and $ItemType -eq "Directory" -and $Force }
