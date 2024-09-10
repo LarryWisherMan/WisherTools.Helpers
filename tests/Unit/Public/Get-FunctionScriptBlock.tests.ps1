@@ -42,6 +42,10 @@ function TestFunction {
 }
 "@
 
+            # Normalize line endings to prevent differences between environments
+            $expected = $expected -replace "\r\n", "`n"
+            $result = $result -replace "\r\n", "`n"
+
             # Validate that the returned result matches the expected script block
             $result | Should -BeExactly $expected
         }
