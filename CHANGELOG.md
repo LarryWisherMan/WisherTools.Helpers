@@ -5,6 +5,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- Added detailed comment-based help to all public functions in the `WisherTools.Helpers` module. This provides better guidance and documentation for the following functions:
+  - `Get-BackupFilePath`
+  - `Get-DirectoryPath`
+  - `Get-FunctionScriptBlock`
+  - `Test-ComputerPing`
+  - `Test-DirectoryExists`
+  
+- Added module PSData and build config
+
+## [v0.1.0] - 2024-09-07
+
 ### Changed
 
 - Removed Test Requierments to Test release

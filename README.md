@@ -18,14 +18,3 @@ The WisherTools.Helpers module is a collection of essential utility functions de
 
 5. **Test-ComputerPing**  
    Pings a computer to check if it is online with a configurable timeout.
-
-
-## Make it yours
-
----
-Generated with Plaster and the SampleModule template
-
-
-This is a sample Readme
-
-## Make it yours
