@@ -28,6 +28,8 @@ now used as default parameters for `New-UniqueFilePath`.
 `Get-BackupFilePath`, to generate unique file paths with customizable
 prefixes, directories, and extensions.
 
+- Icon Url in psd1
+
 ### Changed
 
 - Replaced hardcoded defaults in `Get-BackupFilePath` with dynamic environment

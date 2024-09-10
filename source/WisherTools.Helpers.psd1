@@ -123,7 +123,7 @@
          ProjectUri   = 'https://github.com/LarryWisherMan/WisherTools.Helpers'
 
          # A URL to an icon representing this module.
-         IconUri      = 'https://raw.githubusercontent.com/LarryWisherMan/WisherTools.Helpers/main/assets/WisherTools.Helpers.png'
+         IconUri      = 'https://raw.githubusercontent.com/LarryWisherMan/ModuleIcons/main/WisherTools.Helpers.png'
 
          # ReleaseNotes of this module
          ReleaseNotes = ''
