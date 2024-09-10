@@ -51,7 +51,7 @@
 '
 
    # Minimum version of the Windows PowerShell engine required by this module
-   PowerShellVersion    = '5.0'
+   PowerShellVersion    = '5.1'
 
    # Name of the Windows PowerShell host required by this module
    # PowerShellHostName = ''
@@ -114,7 +114,7 @@
 
          Prerelease   = ''
          # Tags applied to this module. These help with module discovery in online galleries.
-         Tags         = @('PowerShell', 'Helper Functions', 'Utilities', 'Directory Management', 'Network Tools')
+         Tags         = @('PowerShell', 'Helper', 'Utilities', 'Directory', 'Network')
 
          # A URL to the license for this module.
          LicenseUri   = 'https://github.com/LarryWisherMan/WisherTools.Helpers/blob/main/LICENSE'
