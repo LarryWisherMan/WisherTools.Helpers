@@ -5,6 +5,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0] - 2024-09-10
+
 ### Added
 
 - Added detailed comment-based help and Unit Tests to all public functions in the
