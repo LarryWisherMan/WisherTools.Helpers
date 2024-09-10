@@ -23,6 +23,51 @@ AfterAll {
 
     Remove-Module -Name $script:moduleName
 }
-Describe 'Get-DirectoryPath.tests.ps1 Tests' -Tag 'Public' {
 
+Describe "Get-DirectoryPath" -Tag "Public" {
+    Context "When IsLocal is $true" {
+        It "Should convert UNC path to local path format" {
+            $BasePath = "\\RemotePC\C$\Files"
+            $ComputerName = "RemotePC"
+            $IsLocal = $true
+
+            $result = Get-DirectoryPath -BasePath $BasePath -ComputerName $ComputerName -IsLocal $IsLocal
+
+            $result | Should -Be "C:\Files"
+        }
+    }
+
+    Context "When IsLocal is $false" {
+        It "Should convert local path to UNC path format" {
+            $BasePath = "C:\Files"
+            $ComputerName = "RemotePC"
+            $IsLocal = $false
+
+            $result = Get-DirectoryPath -BasePath $BasePath -ComputerName $ComputerName -IsLocal $IsLocal
+
+            $result | Should -Be "\\RemotePC\C$\Files"
+        }
+    }
+
+    Context "When BasePath is not in expected format" {
+        It "Should return the original path if IsLocal is $true" {
+            $BasePath = "D:\OtherFiles"
+            $ComputerName = "RemotePC"
+            $IsLocal = $true
+
+            $result = Get-DirectoryPath -BasePath $BasePath -ComputerName $ComputerName -IsLocal $IsLocal
+
+            $result | Should -Be "D:\OtherFiles"
+        }
+
+        It "Should return the original path if IsLocal is $false" {
+            $BasePath = "D:\OtherFiles"
+            $ComputerName = "RemotePC"
+            $IsLocal = $false
+
+            $result = Get-DirectoryPath -BasePath $BasePath -ComputerName $ComputerName -IsLocal $IsLocal
+
+            $result | Should -Be "\\RemotePC\D$\OtherFiles"
+        }
+    }
 }

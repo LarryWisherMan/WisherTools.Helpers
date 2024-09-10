@@ -6,19 +6,19 @@ SHORT DESCRIPTION
 
 **Function Overview**
 
-1. **Get-DirectoryPath**  
+1. **Get-DirectoryPath**
    Converts a base path to a local or UNC format based on whether the target is local or remote.
 
-2. **Get-FunctionScriptBlock**  
+2. **Get-FunctionScriptBlock**
    Retrieves the script block of a specified PowerShell function.
 
-3. **Get-BackupFilePath**  
+3. **Get-BackupFilePath**
    Generates a unique backup file path with a timestamp.
 
-4. **Test-DirectoryExists**  
+4. **Test-DirectoryExistence**
    Ensures that a directory exists; creates it if necessary.
 
-5. **Test-ComputerPing**  
+5. **Test-ComputerPing**
    Pings a computer to check if it is online with a configurable timeout.
 
 
@@ -27,19 +27,19 @@ LONG DESCRIPTION
 
 **Function Overview**
 
-1. **Get-DirectoryPath**  
+1. **Get-DirectoryPath**
    Converts a base path to a local or UNC format based on whether the target is local or remote.
 
-2. **Get-FunctionScriptBlock**  
+2. **Get-FunctionScriptBlock**
    Retrieves the script block of a specified PowerShell function.
 
-3. **Get-BackupFilePath**  
+3. **Get-BackupFilePath**
    Generates a unique backup file path with a timestamp.
 
-4. **Test-DirectoryExists**  
+4. **Test-DirectoryExistence**
    Ensures that a directory exists; creates it if necessary.
 
-5. **Test-ComputerPing**  
+5. **Test-ComputerPing**
    Pings a computer to check if it is online with a configurable timeout.
 
 
@@ -57,4 +57,3 @@ SEE ALSO
 
 KEYWORDS
     {{ Add comma separated keywords here }}
-
